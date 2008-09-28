@@ -7,11 +7,11 @@ using System.Runtime.CompilerServices;
 // associated with an assembly.
 //
 [assembly: AssemblyTitle("Winterdom.BizTalk.Adapters.NullAdapter")]
-[assembly: AssemblyDescription("Dev/null Send Adapter for BizTalk Server 2004")]
+[assembly: AssemblyDescription("Dev/null Send Adapter for BizTalk Server 2006 R2")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("")]
-[assembly: AssemblyCopyright("(C) 2004, Tomas Restrepo")]
+[assembly: AssemblyCopyright("(C) 2007, Tomas Restrepo")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]		
 
@@ -57,3 +57,4 @@ using System.Runtime.CompilerServices;
 [assembly: AssemblyDelaySign(false)]
 [assembly: AssemblyKeyFile(@"..\..\..\NullAdapter.snk")]
 [assembly: AssemblyKeyName("")]
+[assembly: System.Runtime.InteropServices.ComVisible(false)]

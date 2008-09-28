@@ -3,7 +3,7 @@
 // NullSendAdapter.cs
 //
 // Author:
-//    Tomas Restrepo (tomasr@mvps.org)
+//    Tomas Restrepo (tomas@winterdom.com)
 //
 
 using System;
@@ -124,14 +124,6 @@ namespace Winterdom.BizTalk.Adapters {
       public bool TransmitMessage(IBaseMessage msg) {
          _terminate.Enter();
          try {
-            bool logMessages = Convert.ToBoolean(
-                              GetAdapterConfigValue(msg.Context, "logMessages")
-                           );
-
-            if ( logMessages ) {
-               SystemMessageContext ctxt = new SystemMessageContext(msg.Context);
-               LogHelper.LogMessage(msg.MessageID, ctxt.InterchangeID);
-            }
             // 
             // discard the message
             //
@@ -153,25 +145,6 @@ namespace Winterdom.BizTalk.Adapters {
 
       #endregion
 
-
-      /// <summary>
-      /// Loads the transmit location adapter configuration
-      /// and gets the value of the specified field
-      /// </summary>
-      /// <param name="propBag">PropertyBag</param>
-      /// <param name="propname">Property name</param>
-      /// <returns>The value</returns>
-      public string GetAdapterConfigValue(IBasePropertyBag propBag, string propname) {
-         string config = (string)propBag.Read("AdapterConfig", PROPNS);
-         if ( config == null )
-            return null;
-
-         XPathDocument doc = new XPathDocument(new StringReader(config));
-         XPathNavigator nav = doc.CreateNavigator();
-
-         string xpath = string.Format("string(/CustomProps/{0})", propname);
-         return (string)nav.Evaluate(xpath);
-      }
-
    } // class NullSendAdapter
+
 } // namespace Winterdom.BizTalk.Adapters

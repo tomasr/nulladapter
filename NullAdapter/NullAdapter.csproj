@@ -78,6 +78,11 @@
       <Name>Microsoft.Biztalk.Adapter.Framework</Name>
       <HintPath>C:\Apps\Biztalk2004\Developer Tools\Microsoft.Biztalk.Adapter.Framework.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.BizTalk.Admin, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.BizTalk.ExplorerOM, Version=3.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Program Files\Microsoft BizTalk Server 2006\Developer Tools\Microsoft.BizTalk.ExplorerOM.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.BizTalk.Interop.TransportProxy">
       <Name>Microsoft.BizTalk.Interop.TransportProxy</Name>
       <HintPath>C:\Apps\Biztalk2004\Microsoft.BizTalk.Interop.TransportProxy.dll</HintPath>
@@ -95,18 +100,15 @@
     <Reference Include="System.Data">
       <Name>System.Data</Name>
     </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml">
       <Name>System.XML</Name>
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdapterConfig.cs" />
     <Compile Include="AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="EventLogSourceInstaller.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="LogHelper.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="NullAdapterMgmt.cs">
@@ -115,19 +117,27 @@
     <Compile Include="NullSendAdapter.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="PropBagAdaptor.cs" />
     <Compile Include="TerminationController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="TransmitLocPageProvider.cs" />
+    <Compile Include="TransmitLocSettingsDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransmitLocSettingsDialog.Designer.cs">
+      <DependentUpon>TransmitLocSettingsDialog.cs</DependentUpon>
+    </Compile>
     <None Include="NullAdapter.reg" />
-    <EmbeddedResource Include="SendPortSchema.xsd">
+    <EmbeddedResource Include="TransmitLocSettingsDialog.resx">
       <SubType>Designer</SubType>
+      <DependentUpon>TransmitLocSettingsDialog.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PreBuildEvent>
     </PreBuildEvent>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>c:\windows\microsoft.net\framework\v2.0.50727\regasm.exe /tlb /registered $(TargetPath)</PostBuildEvent>
   </PropertyGroup>
 </Project>
