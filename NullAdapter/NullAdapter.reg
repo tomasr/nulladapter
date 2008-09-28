@@ -1,0 +1,48 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\CLSID\{C98D3C74-F722-4F50-8AFC-4C2A9CB1D961}]
+@="/dev/null Adapter"
+
+[HKEY_CLASSES_ROOT\CLSID\{C98D3C74-F722-4F50-8AFC-4C2A9CB1D961}\BizTalk]
+@="BizTalk"
+'Type of the transport adapter
+"TransportType"="/dev/null Adapter"
+
+'Constraints define the capabilities of the adapter: e.g send, receive, request-response, etc
+"Constraints"=dword:2012
+
+'============= Registration for send side of adapter ==============
+
+'Adapter framework property page for send location configuration
+"TransmitLocation_PageProv"="{2DE93EE6-CB01-4007-93E9-C3D71689A282}"
+
+'Class ID of the class that implements send part of adapter
+"OutboundEngineCLSID"="{95810FF9-F609-4395-AEBE-995855430547}"
+
+'Type name of the class that implements send part of the adapter
+"OutboundTypeName"="Winterdom.BizTalk.Adapters.NullSendAdapter"
+
+'Path to the assembly that implements sending part of the adapter
+"OutboundAssemblyPath"="E:\\Projects\\Biztalk\\NullAdapterSol\\NullAdapter\\bin\\Debug\\Winterdom.BizTalk.Adapters.NullAdapter.dll"
+
+'URL prefixes used for dynamic port transport resolution
+"AliasesXML"="<AdapterAliasList><AdapterAlias>null://</AdapterAlias></AdapterAliasList>"
+
+'SSO registration of the adapter framework property page for send location
+"SendLocationPropertiesXML"="<CustomProps><AdapterConfig vt=\"8\"/></CustomProps>"
+
+'============= End of registration for send side of adapter ==============
+
+'Namespace of the adapter properties. The properties will be stored on message context under this namespace
+"PropertyNameSpace"="urn:schemas-winterdom-com:nulladapter"
+
+'Type name of the class that provides UI for adapter property pages
+"AdapterMgmtTypeName"="Winterdom.BizTalk.Adapters.NullAdapterMgmt"
+
+'Path to the assembly that implments UI for adapter property pages
+"AdapterMgmtAssemblyPath"="E:\\Projects\\Biztalk\\NullAdapterSol\\NullAdapter\\bin\\Debug\\Winterdom.BizTalk.Adapters.NullAdapter.dll"
+
+
+[HKEY_CLASSES_ROOT\CLSID\{C98D3C74-F722-4F50-8AFC-4C2A9CB1D961}\Implemented Categories]
+
+[HKEY_CLASSES_ROOT\CLSID\{C98D3C74-F722-4F50-8AFC-4C2A9CB1D961}\Implemented Categories\{7F46FC3E-3C2C-405B-A47F-8D17942BA8F9}]
