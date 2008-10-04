@@ -1,5 +1,11 @@
 Windows Registry Editor Version 5.00
 
+'
+' Besides registering this .reg file, also remember
+' to register the assembly for com interop using the command
+' regasm /codebase Path/To/Winterdom.BizTalk.Adapters.NullAdapter.dll
+'
+
 [HKEY_CLASSES_ROOT\CLSID\{C98D3C74-F722-4F50-8AFC-4C2A9CB1D961}]
 @="/dev/null Adapter"
 
@@ -23,7 +29,7 @@ Windows Registry Editor Version 5.00
 "OutboundTypeName"="Winterdom.BizTalk.Adapters.NullSendAdapter"
 
 'Path to the assembly that implements sending part of the adapter
-"OutboundAssemblyPath"="E:\\Projects\\Biztalk\\NullAdapterR2\\NullAdapter\\bin\\Debug\\Winterdom.BizTalk.Adapters.NullAdapter.dll"
+"OutboundAssemblyPath"="E:\\Projects\\Biztalk\\NullAdapter\\NullAdapter\\bin\\Debug\\Winterdom.BizTalk.Adapters.NullAdapter.dll"
 
 'URL prefixes used for dynamic port transport resolution
 "AliasesXML"="<AdapterAliasList><AdapterAlias>null://</AdapterAlias></AdapterAliasList>"
@@ -39,8 +45,8 @@ Windows Registry Editor Version 5.00
 'Type name of the class that provides UI for adapter property pages
 "AdapterMgmtTypeName"="Winterdom.BizTalk.Adapters.NullAdapterMgmt"
 
-'Path to the assembly that implments UI for adapter property pages
-"AdapterMgmtAssemblyPath"="E:\\Projects\\Biztalk\\NullAdapterR2\\NullAdapter\\bin\\Debug\\Winterdom.BizTalk.Adapters.NullAdapter.dll"
+'Path to the assembly that implements UI for adapter property pages
+"AdapterMgmtAssemblyPath"="E:\\Projects\\Biztalk\\NullAdapter\\NullAdapter\\bin\\Debug\\Winterdom.BizTalk.Adapters.NullAdapter.dll"
 
 
 [HKEY_CLASSES_ROOT\CLSID\{C98D3C74-F722-4F50-8AFC-4C2A9CB1D961}\Implemented Categories]

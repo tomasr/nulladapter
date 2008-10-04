@@ -29,7 +29,7 @@ namespace Winterdom.BizTalk.Adapters {
       #region IAdapterConfig Members
 
       public string GetConfigSchema(ConfigType configType) {
-         return null;
+         return @"<schema xmlns='http://www.w3.org/2001/XMLSchema'/>";
       }
 
       public Result GetSchema(string uri, string namespaceName, out string fileLocation) {
